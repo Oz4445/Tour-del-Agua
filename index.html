@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Tour del Agua - Zona Sur de Morelos</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+<header>
+    <img src="imagenes/logo.png" alt="Logo del Tour del Agua" style="width: 50px; height: 50px;">
+    <h1>El Tour del Agua - Zona Sur de Morelos</h1>
+</header>
+
+<section>
+    <h2>Parques Acuáticos</h2>
+    <ul>
+        <li><a href="manantiales.html">Los Manantiales</a></li>
+        <li><a href="huertas.html">Las Huertas</a></li>
+        <li><a href="tortugas.html">Balneario Las Tortugas</a></li>
+        <li><a href="rollo.html">El Rollo</a></li>
+        <li><a href="apotla.html">Apotla</a></li>
+        <li><a href="estacas.html">Las Estacas</a></li>
+        <li><a href="santaisabel.html">Santa Isabel</a></li>
+        <li><a href="iguazu.html">Iguazu</a></li>
+        <li><a href="Real de San Nicolas.html">Real de San Nicolás</a></li>
+        <li><a href="aquasplash.html">Aqua Splash</a></li>
+    </ul>
+</section>
+
+<section class="galeria">
+    <h2>Explora los Parques Acuáticos</h2>
+    <div class="galeria-grid">
+        <!-- Galería de imágenes, incluyendo Aqua Splash -->
+        <a href="manantiales.html">
+            <img src="imagenes/imagen1_manantiales1.jpg" alt="Los Manantiales">
+            <div id="clima-manantiales"></div>
+        </a>
+        <a href="huertas.html">
+            <img src="imagenes/imagen1_huertas1.jpg" alt="Las Huertas">
+            <div id="clima-huertas"></div>
+        </a>
+        <a href="tortugas.html">
+            <img src="imagenes/imagen1_tortugas1.jpg" alt="Balneario Las Tortugas">
+            <div id="clima-tortugas"></div>
+        </a>
+        <a href="rollo.html">
+            <img src="imagenes/imagen1_rollo1.jpg" alt="El Rollo">
+            <div id="clima-rollo"></div>
+        </a>
+        <a href="apotla.html">
+            <img src="imagenes/imagen1_apotla1.jpg" alt="Apotla">
+            <div id="clima-apotla"></div>
+        </a>
+        <a href="estacas.html">
+            <img src="imagenes/imagen1_estacas1.jpg" alt="Las Estacas">
+            <div id="clima-estacas"></div>
+        </a>
+        <a href="santaisabel.html">
+            <img src="imagenes/imagen1_santaisabel1.jpg" alt="Santa Isabel">
+            <div id="clima-santaisabel"></div>
+        </a>
+        <a href="iguazu.html">
+            <img src="imagenes/iguazu1.jpg" alt="Iguazu">
+            <div id="clima-iguazu"></div>
+        </a>
+        <a href="Real de San Nicolas.html">
+            <img src="imagenes/real1.jpg" alt="Real de San Nicolás">
+            <div id="clima-realdesannicolas"></div>
+        </a>
+        <a href="aquasplash.html">
+            <img src="imagenes/aqua.jpg" alt="Aqua Splash">
+            <div id="clima-aquasplash"></div>
+        </a>
+    </div>
+</section>
+
+<script>
+    // Coordenadas aproximadas de cada balneario, incluyendo Aqua Splash
+    const balnearios = {
+        "manantiales": { lat: 18.6221, lon: -99.1411 },
+        "huertas": { lat: 18.6221, lon: -99.1411 },
+        "tortugas": { lat: 18.8815, lon: -99.0988 },
+        "rollo": { lat: 18.6221, lon: -99.1411 },
+        "apotla": { lat: 18.7966, lon: -99.3874 },
+        "estacas": { lat: 18.7306, lon: -99.0936 },
+        "santaisabel": { lat: 18.6813, lon: -99.1944 },
+        "iguazu": { lat: 18.9361, lon: -99.1826 },
+        "realdesannicolas": { lat: 18.9738, lon: -99.1145 },
+        "aquasplash": { lat: 18.7800, lon: -99.1800 } // Coordenadas aproximadas de Aqua Splash
+    };
+
+    // Función para obtener y mostrar el clima de cada balneario
+    async function mostrarClima() {
+        for (const [id, coords] of Object.entries(balnearios)) {
+            try {
+                const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&current_weather=true`);
+                const climaData = await response.json();
+
+                if (climaData && climaData.current_weather) {
+                    const climaDiv = document.createElement('div');
+                    climaDiv.classList.add('clima');
+                    climaDiv.innerHTML = `
+                        <p><strong>Clima actual:</strong> ${climaData.current_weather.weathercode}</p>
+                        <p><strong>Temperatura:</strong> ${climaData.current_weather.temperature}°C</p>
+                    `;
+                    document.getElementById(`clima-${id}`).appendChild(climaDiv);
+                } else {
+                    console.error(`No se pudo obtener el clima para ${id}`);
+                }
+            } catch (error) {
+                console.error(`Error al obtener el clima para ${id}:`, error);
+            }
+        }
+    }
+
+    // Ejecuta la función al cargar la página
+    document.addEventListener('DOMContentLoaded', mostrarClima);
+</script>
+
+<section id="teques-enlace" style="text-align: center; margin: 20px 0;">
+    <a href="tequesquitengo.html">
+        <img src="imagenes/teques.jpg" 
+             alt="Visita Tequesquitengo" 
+             style="width: 100%; height: auto; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+    </a>
+</section>
+
+
+<!-- Sección de Reseñas -->
+<section id="reseñas">
+    <h2>Deja tu Reseña</h2>
+    <form id="reseñaForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" required></textarea>
+
+        <label>Calificación:</label>
+        <div id="starsContainer"></div> <!-- Contenedor para las estrellas -->
+
+        <input type="hidden" id="calificacion" required> <!-- Input oculto para guardar la calificación -->
+
+        <button type="submit">Enviar Reseña</button>
+    </form>
+
+    <div id="listaReseñas"></div>
+</section>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const listaReseñas = document.getElementById("listaReseñas");
+        const calificacionInput = document.getElementById("calificacion");
+        const starsContainer = document.getElementById("starsContainer");
+
+        // Lista de palabras prohibidas
+        const palabrasProhibidas = [
+            "puta", "puto", "mierda", "perra", "imbecil", 
+            "pendeja", "pendejo", "pendejos", "pendejas", "chinga", "madre"
+        ];
+
+        // Función para verificar si el texto contiene palabras prohibidas
+        function contienePalabrasProhibidas(texto) {
+            return palabrasProhibidas.some(palabra => {
+                const regex = new RegExp(`\\b${palabra}\\b`, 'gi');
+                return regex.test(texto);
+            });
+        }
+
+        // Cargar reseñas guardadas desde Local Storage
+        if (localStorage.getItem("reseñas")) {
+            listaReseñas.innerHTML = localStorage.getItem("reseñas");
+        }
+
+        // Crear estrellas y añadir interactividad
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement("span");
+            star.classList.add("star");
+            star.setAttribute("data-value", i);
+            star.innerHTML = "&#9733;"; // Unicode para estrella ★
+
+            star.addEventListener("click", function() {
+                const rating = this.getAttribute("data-value");
+                calificacionInput.value = rating;
+
+                // Actualizar visualmente las estrellas hasta la seleccionada
+                document.querySelectorAll(".star").forEach((s, index) => {
+                    s.classList.toggle("selected", index < rating);
+                });
+            });
+
+            starsContainer.appendChild(star);
+        }
+
+        // Función para agregar una reseña
+        function agregarReseña() {
+            const nombre = document.getElementById("nombre").value;
+            const comentario = document.getElementById("comentario").value;
+            const calificacion = calificacionInput.value;
+
+            // Verificar si el comentario contiene palabras prohibidas
+            if (contienePalabrasProhibidas(comentario)) {
+                alert("Tu comentario contiene palabras ofensivas y no se puede publicar.");
+                return; // Evita que el comentario se publique
+            }
+
+            // Proceder con el guardado si no hay palabras prohibidas
+            if (nombre && comentario && calificacion) {
+                const reseñaDiv = document.createElement("div");
+                reseñaDiv.classList.add("reseña");
+                reseñaDiv.innerHTML = `
+                    <p><strong>${nombre}</strong> - ${calificacion} estrellas</p>
+                    <p>${comentario}</p>
+                    <hr>
+                `;
+                listaReseñas.appendChild(reseñaDiv);
+
+                // Guardar en Local Storage
+                localStorage.setItem("reseñas", listaReseñas.innerHTML);
+                console.log("Reseñas guardadas:", localStorage.getItem("reseñas"));
+
+                // Resetear el formulario y desmarcar estrellas
+                document.getElementById("reseñaForm").reset();
+                calificacionInput.value = "";
+                document.querySelectorAll(".star").forEach(star => star.classList.remove("selected"));
+            }
+        }
+
+        // Asignar el formulario de reseña para agregar reseñas
+        document.getElementById("reseñaForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            agregarReseña();
+        });
+    });
+</script>
+
+
+    
+
+<!-- Sección de Hoteles -->
+<section class="hoteles">
+    <h2>Hoteles Cercanos</h2>
+    <ul>
+        <li>
+            <img src="imagenes/hotel_MonteCarlo.jpg" alt="Hotel Paraíso Morelos" style="width: 200px; height: auto;">
+            <strong>Hotel MonteCarlo</strong> - Es un buen punto para transportarte a caulquier balneario. Precio desde $1,276 MXN por noche.
+            <div class="ubicacion">
+                <!-- Mapa embebido -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.7746773012796!2d-99.20971082495939!3d18.629201782485517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cddf1d89555555%3A0x624d1e0ccb598990!2sHotel%20MonteCarlo!5e0!3m2!1ses!2smx!4v1731075495197!5m2!1ses!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
+        </li>
+        <li>
+            <img src="imagenes/hotel_paraiso_morelos.jpg" alt="Hotel Balneario Los Manantiales" style="width: 200px; height: auto;">
+            <strong>Hotel Balneario Los Manantiales</strong> - A 10 minutos de Los Manantiales. Precio desde $900 MXN por noche.
+            <div class="ubicacion">
+                <!-- Mapa embebido -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.1110666779396!2d-99.4410444249519!3d18.926477382247604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdc3021f61755b%3A0x933729bde6e2abb!2sBalnearios%20Manantiales%20G.M.!5e0!3m2!1ses!2smx!4v1729744719518!5m2!1ses!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </li>
+        <li>
+            <img src="imagenes/hotel_relax_morelos.jpg" alt="Hotel Relax Morelos" style="width: 200px; height: auto;">
+            <strong>Hotel Relax Morelos</strong> - A 15 minutos de Apotla. Precio desde $1,000 MXN por noche.
+            <div class="ubicacion">
+                <!-- Mapa embebido -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.468204256077!2d-99.11860682495681!3d18.732612282402584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce799c6f3d1ed9%3A0x71599f3f33f66273!2sHotel%20Relax%20la%20guarida%20campestre!5e0!3m2!1ses!2smx!4v1729744755970!5m2!1ses!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </li>
+    </ul>
+</section>
+
+
+<section id="hoteles-enlace" style="text-align: center; margin: 20px 0;">
+    <a href="hoteles.html">
+        <img src="imagenes/Hoteles.jpg" 
+             alt="Visita Los Mejores Hoteles en Morelos" 
+             style="width: 100%; height: auto; max-width: 800px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+    </a>
+</section>
+
+
+
+<!-- Enlace para ir al formulario de compra -->
+<section>
+    <h2>Adquiere tus boletos</h2>
+    <p>Haz clic en el siguiente botón para comprar tus boletos:</p>
+    <a href="formulario.html" class="boton-comprar">Comprar Boletos</a>
+</section>
+
+</body>
+</html>
+

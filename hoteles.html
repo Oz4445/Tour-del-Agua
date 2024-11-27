@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Mejores Hoteles en Morelos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #0096c7;
+            color: white;
+        }
+        main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .hotel {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .hotel:hover {
+            transform: scale(1.05);
+        }
+        .hotel img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #4CAF50;
+        }
+        .info {
+            padding: 15px;
+        }
+        .info h2 {
+            font-size: 1.5em;
+            color: #0a31dd;
+        }
+        .info p {
+            font-size: 1em;
+            margin: 10px 0;
+            color: #555;
+        }
+        .info ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .info ul li {
+            padding: 5px 0;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .info button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #0096c7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .info button:hover {
+            background: #007bb2;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #333;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Los Mejores Hoteles en Morelos</h1>
+        <p>Explora los alojamientos más destacados de Morelos para disfrutar de una experiencia única.</p>
+    </header>
+    <main>
+        <section class="hotel">
+            <img src="imagenes/Hotel Imperial.jpg" alt="Hotel Imperial">
+            <div class="info">
+                <h2>Hotel Imperial</h2>
+                <p>Hotel Imperial Jojutla, que se encuentra a 29 km de Zona Arqueológica de Xochicalco y a 18 km de Parque de atracciones Balneario Santa Isabel, ofrece habitaciones en Jojutla de Juárez.</p>
+                <ul>
+                    <li>Piscina al aire libre</li>
+                    <li>Habitaciones sin humo</li>
+                    <li>WiFi gratis</li>
+                    <li>Habitaciones familiares</li>
+                </ul>
+                <button onclick="location.href='index.html'">Volver al Inicio</button>
+            </div>
+        </section>
+
+        <section class="hotel">
+            <img src="imagenes/Hacienda Vista Hermosa.jpg" alt="Hotel Hacienda Vista Hermosa">
+            <div class="info">
+                <h2>Hotel Hacienda Vista Hermosa</h2>
+                <p>Hacienda Vista Hermosa es el lugar ideal para una experiencia inolvidable, con paquetes integrales que incluyen desde el elemento más esencial hasta llegar a lo lujoso y exclusivo.</p>
+                <ul>
+                    <li>Albercas</li>
+                    <li>Cancha de Tenis</li>
+                    <li>Sala de Juegos</li>
+                    <li>Paseos a Caballo</li>
+                    <li>Jardines</li>
+                    <li>Restaurante</li>
+                </ul>
+                <button onclick="location.href='index.html'">Volver al Inicio</button>
+            </div>
+        </section>
+
+        <section class="hotel">
+            <img src="imagenes/haciendo_acamilpa.jpg" alt="Hacienda Acamilpa">
+            <div class="info">
+                <h2>Hacienda Acamilpa</h2>
+                <p>es un auténtico tesoro de jardines exuberantes y edificaciones espectaculares.</p>
+                <ul>
+                    <li>Incluye Bar</li>
+                    <li>Servicio a la habitación</li>
+                    <li>Alberca</li>
+                    <li>Estacionamiento incluido</li>
+                    <li>Servicio a la habitación</li>
+                </ul>
+                <button onclick="location.href='index.html'">Volver al Inicio</button>
+            </div>
+        </section>
+
+        <section class="hotel">
+            <img src="imagenes/hotel_san_gabriel.jpg" alt="Hacienda San Gabriel las Palmas">
+            <div class="info">
+                <h2>Hacienda San Gabriel las Palmas</h2>
+                <p>La Hacienda San Gabriel de las Palmas está situada en un edificio colonial histórico rodeado de un jardín botánico precioso. Ofrece una amplia selección de instalaciones de ocio, que incluyen un spa.</p>
+                <ul>
+                    <li>Piscina al aire libre</li>
+                    <li>Parking gratis</li>
+                    <li>Habitaciones sin humo</li>
+                    <li>Spa y centro de bienestar</li>
+                    <li>Traslado aeropuerto</li>
+                    <li>WiFi gratis</li>
+                    <li>Habitaciones familiares</li>
+                    <li>Bar</li>
+                </ul>
+                <button onclick="location.href='index.html'">Volver al Inicio</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hoteles Morelos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

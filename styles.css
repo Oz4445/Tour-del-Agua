@@ -1,0 +1,225 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('imagenes/Fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    position: relative;
+}
+
+/* Capa superpuesta */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajusta la opacidad según la visibilidad deseada */
+    z-index: -1;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #0077b6; /* Azul vibrante */
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff; /* Texto en blanco */
+}
+
+header img {
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Secciones y títulos */
+section h2 {
+    text-align: center;
+    color: #0725a8; /* Azul vibrante */
+    font-size: 2em;
+    margin: 0 auto;
+    margin: 20px 0;
+}
+
+section h3, section p, section ul {
+    text-align: center; /* Asegura que todos los elementos estén centrados */
+}
+
+/* Menú de navegación */
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff; /* Links en blanco */
+    background-color: #0096c7; /* Botones azul intermedio */
+    padding: 20px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: #02668a; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Galería */
+.galeria {
+    padding: 40px;
+    background-color: #ffffff; /* Fondo blanco para la galería */
+    border-radius: 15px;
+}
+
+.galeria h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #0077b6; /* Azul vibrante */
+}
+
+/* Grid de imágenes */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Se ajusta automáticamente */
+    gap: 20px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+.galeria-grid img:hover {
+    transform: scale(1.05); /* Efecto de zoom suave */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Sombra más grande al pasar el mouse */
+}
+
+/* Sección de Hoteles */
+.hoteles {
+    padding: 60px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px;
+    margin: 40px 0;
+}
+
+.hoteles h2 {
+    color: #0077b6;
+    text-align: center;
+}
+
+.hoteles ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.hoteles ul li {
+    padding: 60px;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+}
+
+/* Contenedor de imágenes */
+.imagen-contenedor {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin deformarse */
+}
+
+/* Efecto hover en el contenedor */
+.imagen-contenedor:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.video {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: 40px auto; /* Centra el contenedor */
+    width: 40%; /* Coincide con el ancho del video */
+    max-width: 420px; /* Un poco más grande que el video para dejar espacio */
+    text-align: center;
+}
+
+.video video {
+    width: 100%; /* El video ocupa todo el ancho del contenedor */
+    max-width: 325px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: lightgray;
+    transition: color 0.2s;
+}
+
+.star.selected,
+.star:hover,
+.star:hover ~ .star {
+    color: gold;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: gray;
+}
+
+.star.selected {
+    color: gold;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.mapa-contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+

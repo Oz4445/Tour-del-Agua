@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tequesquitengo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0078D7;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 1rem;
+        }
+        h1, h2 {
+            color: #00509E;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(33.333% - 1rem);
+            max-width: calc(33.333% - 1rem);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 0.5rem 0;
+            color: #0078D7;
+        }
+        .card p {
+            padding: 0 1rem 1rem;
+        }
+        .back-button {
+            display: block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background-color: #00509E;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            max-width: 200px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .back-button:hover {
+            background-color: #003E7E;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 1rem);
+                max-width: calc(50% - 1rem);
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Tequesquitengo</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Descubre Tequesquitengo</h2>
+            <p>Tequesquitengo es un destino turístico espectacular, ideal para disfrutar de actividades acuáticas, paisajes naturales y una experiencia inolvidable.</p>
+            <img src="imagenes/teques1.jpg" alt="Imagen de Tequesquitengo" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <a href="index.html" class="back-button">Volver al Inicio</a>
+        </section>
+        <section>
+            <h2>Los mejores lugares para comer</h2>
+            <div class="container">
+                <div class="card">
+                    <img src="imagenes/sabor.jpg" alt="El Sabor de Teques">
+                    <h3>El Sabor de Teques</h3>
+                    <p>Especialidad en pescados y mariscos frescos.</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/Hükah.jpg" alt="Hükah Teques">
+                    <h3>Hükah Teques</h3>
+                    <p>Comida mexicana con una vista espectacular al lago.</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/villa.jpg" alt="Villa Floresta">
+                    <h3>Villa Floresta</h3>
+                    <p>Ambiente tranquilo y platos internacionales.</p>
+                </div>
+            </div>
+            <a href="index.html" class="back-button">Volver al Inicio</a>
+        </section>
+        <section>
+            <h2>Bares más conocidos</h2>
+            <div class="container">
+                <div class="card">
+                    <img src="imagenes/barco.jpg" alt="Soen by Barco">
+                    <h3>Soen by Barco</h3>
+                    <p>Famoso por sus vistas panorámicas y cócteles exclusivos.</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/marina.jpg" alt="Restaurante Marina Palace">
+                    <h3>Restaurante Marina Palace</h3>
+                    <p>Perfecto para disfrutar de música en vivo junto al lago.</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/vikingos.jpg" alt="Playa Vikingos">
+                    <h3>Playa Vikingos</h3>
+                    <p>Ambiente relajado y una gran variedad de bebidas tropicales.</p>
+                </div>
+            </div>
+            <a href="index.html" class="back-button">Volver al Inicio</a>
+        </section>
+        <section>
+            <h2>Atracciones más concurridas</h2>
+            <div class="container">
+                <div class="card">
+                    <img src="imagenes/sky.jpg" alt="Paracaidismo">
+                    <h3> Skydive (Paracaidismo)</h3>
+                    <p>Vive la emoción de saltar sobre el lago con vistas espectaculares.</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/jardines.jpg" alt="Jardines de México">
+                    <h3>Jardines de México</h3>
+                    <p>Somos el parque temático de jardines florales más grande del mundo. </p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/bungy.JPG" alt="Bungy Teques">
+                    <h3>Bungy Teques</h3>
+                    <p>Si te gustan los deportes extremos, nosotros somos el Bungy más alto y cercano a la Ciudad de México</p>
+                </div>
+            </div>
+            <a href="index.html" class="back-button">Volver al Inicio</a>
+        </section>
+        <section>
+            <h2>Los mejores hoteles</h2>
+            <div class="container">
+                <div class="card">
+                    <img src="imagenes/excelaris.jpg" alt="Casa del Lago">
+                    <h3>Excelaris Grand Resort Conventions & Spa</h3>
+                    <p>Las elegantes habitaciones están decoradas en tonos claros y tienen conexión WiFi gratuita. Los baños completos incluyen artículos de aseo gratuitos, mientras que algunos alojamientos tienen una bañera de hidromasaje. Hay TV vía satélite, caja fuerte para portátil y teléfono.</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/bejar.jpg" alt="Villa Bejar">
+                    <h3>Villa Bejar</h3>
+                    <p>La Villa Bejar Tequesquitengo ocupa una zona de jardines en el lago Tequesquitengo, presenta una arquitectura con toques árabes y ofrece piscina al aire libre, bañera de hidromasaje, gimnasio, spa, aparcamiento gratuito y conexión WiFi gratuita en las zonas comunes.</p>
+                </div>
+                <div class="card">
+                    <img src="imagenes/hermosa.jpg" alt="Hotel Hacienda Vista Hermosa">
+                    <h3>Hotel Hacienda Vista Hermosa</h3>
+                    <p>Este hotel con encanto, que ocupa un edificio del siglo XVI restaurado, dispone de piscinas al aire libre, un lago artificial y jardines tropicales. El lago de Teques está a 5 minutos en coche.
+                    </p>
+                </div>
+            </div>
+            <a href="index.html" class="back-button">Volver al Inicio</a>
+        </section>
+    </main>
+<section>
+            <h2>Ubicación</h2>
+            <p>Tequesquitengo está ubicado en el estado de Morelos, México, y es conocido por su hermoso lago y actividades turísticas.</p>
+            <div class="map">
+                <iframe 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30247.94462824735!2d-99.28904304105409!3d18.619381079553772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdd4ec0df888a3%3A0x46bdbc3e3b433871!2s62915%20Tequesquitengo%2C%20Mor.!5e0!3m2!1ses!2smx!4v1732070537920!5m2!1ses!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <a href="index.html" class="back-button">Volver al Inicio</a>
+        </section>
+
+        
+
+    <footer>
+        <p>&copy; 2024 Tequesquitengo. Todos los derechos reservados.</p>
+    </footer>
+    
+</body>
+</html>
+
+
